@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.LBL_elapsed = new System.Windows.Forms.Label();
             this.BUT_startstop = new System.Windows.Forms.Button();
             this.LBL_workTime = new System.Windows.Forms.Label();
             this.LBL_restTime = new System.Windows.Forms.Label();
             this.NUD_workTime = new System.Windows.Forms.NumericUpDown();
             this.NUD_restTime = new System.Windows.Forms.NumericUpDown();
+            this.TIM_timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_workTime)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_restTime)).BeginInit();
             this.SuspendLayout();
@@ -60,6 +62,7 @@
             this.BUT_startstop.TabIndex = 1;
             this.BUT_startstop.Text = "START";
             this.BUT_startstop.UseVisualStyleBackColor = true;
+            this.BUT_startstop.Click += new System.EventHandler(this.BUT_startstop_Click);
             // 
             // LBL_workTime
             // 
@@ -90,6 +93,12 @@
             this.NUD_workTime.Name = "NUD_workTime";
             this.NUD_workTime.Size = new System.Drawing.Size(55, 20);
             this.NUD_workTime.TabIndex = 4;
+            this.NUD_workTime.Value = new decimal(new int[] {
+            45,
+            0,
+            0,
+            0});
+            this.NUD_workTime.ValueChanged += new System.EventHandler(this.NUD_workTime_ValueChanged);
             // 
             // NUD_restTime
             // 
@@ -102,6 +111,17 @@
             this.NUD_restTime.Name = "NUD_restTime";
             this.NUD_restTime.Size = new System.Drawing.Size(55, 20);
             this.NUD_restTime.TabIndex = 5;
+            this.NUD_restTime.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.NUD_restTime.ValueChanged += new System.EventHandler(this.NUD_restTime_ValueChanged);
+            // 
+            // TIM_timer
+            // 
+            this.TIM_timer.Interval = 1000;
+            this.TIM_timer.Tick += new System.EventHandler(this.TIM_timer_Tick);
             // 
             // FRM_main
             // 
@@ -116,6 +136,7 @@
             this.Controls.Add(this.LBL_elapsed);
             this.Name = "FRM_main";
             this.Text = "Time Blocker";
+            this.Load += new System.EventHandler(this.FRM_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_workTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_restTime)).EndInit();
             this.ResumeLayout(false);
@@ -131,6 +152,7 @@
         private System.Windows.Forms.Label LBL_restTime;
         private System.Windows.Forms.NumericUpDown NUD_workTime;
         private System.Windows.Forms.NumericUpDown NUD_restTime;
+        private System.Windows.Forms.Timer TIM_timer;
     }
 }
 
