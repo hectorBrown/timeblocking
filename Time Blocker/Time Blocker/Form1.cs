@@ -35,14 +35,14 @@ namespace Time_Blocker
         private void TIM_timer_Tick(object sender, EventArgs e)
         {
             timeElapsed += 1;
-            if (working && timeElapsed >= NUD_workTime.Value)
+            if (working && timeElapsed >= NUD_workTime.Value * 60)
             {
                 working = false;
                 timeElapsed = 0;
                 LBL_elapsed.BackColor = Color.Red;
                 System.Media.SystemSounds.Exclamation.Play();
             }
-            else if (!working && timeElapsed >= NUD_restTime.Value)
+            else if (!working && timeElapsed >= NUD_restTime.Value * 60)
             {
                 working = true;
                 timeElapsed = 0;
