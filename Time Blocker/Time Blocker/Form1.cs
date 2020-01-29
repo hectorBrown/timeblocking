@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Time_Blocker
 {
-    public partial class Form1 : Form
+    public partial class FRM_main : Form
     {
-        public Form1()
+        public FRM_main()
         {
             InitializeComponent();
         }
