@@ -135,7 +135,9 @@
             this.Controls.Add(this.BUT_startstop);
             this.Controls.Add(this.LBL_elapsed);
             this.Name = "FRM_main";
+            this.Opacity = 0.65D;
             this.Text = "Time Blocker";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.FRM_main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUD_workTime)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUD_restTime)).EndInit();
